@@ -596,6 +596,97 @@ export interface PasscodeType {
     }
 }
 
+export interface IdentityCardType {
+    Add: {
+        Parameters: {
+            accessToken: string;
+            lockId: number;
+            cardNumber: string;
+            cardName: string;
+            startDate: number;
+            endDate: number;
+            date: number;
+            addType?: string;
+        };
+        Response: {
+            cardId: number;
+        }
+    }
+    Get: {
+        Parameters: {
+            accessToken: string;
+            lockId: number;
+            pageNo: number;
+            pageSize: number;
+            date: number;
+        };
+        Response: {
+            list: {
+                cardId: number,
+                lockId: number,
+                cardNumber: string,
+                cardName: string,
+                startDate: number,
+                endDate: number,
+                createDate: number,
+                senderUsername: string
+            }[]
+        }
+    };
+    Delete: {
+        Parameters: {
+            accessToken: string;
+            lockId: number;
+            cardId: number;
+            date: number;
+            deleteType?: number;
+        };
+        Response: {
+            errcode: number;
+            errmsg: string;
+        }
+    };
+    ChangePeriod: {
+        Parameters: {
+            accessToken: string;
+            lockId: number;
+            cardId: number;
+            date: number;
+            startDate?: number;
+            endDate?: number;
+            changeType?: number;
+        };
+        Response: {
+            errcode: number;
+            errmsg: string;
+        }
+    };
+    Clear: {
+        Parameters: {
+            accessToken: string;
+            lockId: number;
+            date: number;
+        };
+        Response: {
+            errcode: number;
+            errmsg: string;
+        }
+    };
+    Rename: {
+        Parameters: {
+            accessToken: string;
+            lockId: number;
+            cardId: number;
+            date: number;
+            cardName: string;
+        };
+        Response: {
+            errcode: number;
+            errmsg: string;
+        }
+    };
+}
+
 export interface GatewayType {
     GetUserID: {
         Parameters: {
