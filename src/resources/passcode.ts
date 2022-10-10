@@ -8,7 +8,7 @@ type AddType = PasscodeType['Add']
 
 export default (client: Client) => ({
     get: (parameters: GetType['Parameters']): Promise<GetType['Response']> => {
-        const endpoint = '/v3/keyboardPwd/get'
+        const endpoint = '/v3/lock/listKeyboardPwd'
     
         return client.request<GetType['Response']>(endpoint, parameters)
     },
