@@ -27,9 +27,11 @@ export default class Client {
           },
           body: new URLSearchParams(body)
         })
-      
         const responseJSON = await response.json()
-      
+        if (this.data?.debug) {
+            console.log(`RESPONSE ${response.status}/${response.statusText}: ${JSON.stringify(responseJSON, null, 2)}`)
+        }
+
         return responseJSON
     }
 }

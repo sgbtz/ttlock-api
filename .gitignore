@@ -1,3 +1,6 @@
 /node_modules
 **/.DS_Store
 /lib
+/coverage
+package-lock.json
+yarn.lock

@@ -2,6 +2,7 @@ export interface ClientType {
     baseUrl: string;
     clientId: string;
     clientSecret: string;
+    debug?: boolean;
 }
 
 export interface UserType {
@@ -630,7 +631,11 @@ export interface IdentityCardType {
                 endDate: number,
                 createDate: number,
                 senderUsername: string
-            }[]
+            }[];
+            pageNo: number;
+            pageSize: number;
+            pages: number;
+            total: number;
         }
     };
     Delete: {
