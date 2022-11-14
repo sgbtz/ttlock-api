@@ -1,10 +1,11 @@
 {
   "name": "@knagyorg/ttlock-api",
-  "version": "0.0.12",
+  "version": "0.0.18",
   "description": "TTLock API",
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "publishing": "yarn build && npm publish --access public"
   },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

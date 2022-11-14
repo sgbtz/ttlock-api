@@ -15,7 +15,8 @@ export default (client: Client) => ({
         return client.request<GetType['Response']>(endpoint, parameters)
     },
     add: (parameters: AddType['Parameters']): Promise<AddType['Response']> => {
-        const endpoint = '/v3/identityCard/add'
+        // const endpoint = '/v3/identityCard/add'
+        const endpoint = '/v3/identityCard/addForReversedCardNumber'
 
         return client.request<AddType['Response']>(endpoint, parameters)
     },

@@ -536,16 +536,27 @@ export interface PasscodeType {
         Parameters: {
             accessToken: string;
             lockId: number;
-            keyboardPwdVersion: number;
-            keyboardPwdType: number;
+            pageNo: number;
+            pageSize: number;
             date: number;
-            keyboardPwdName?: string;
-            startDate?: number;
-            endDate?: number;
         };
         Response: {
-            keyboardPwd: string;
-            keyboardPwdId: number;
+            list: {
+                keyboardPwdId: number,
+                lockId: number,
+                keyboardPwd: string,
+                keyboardPwdName: string,
+                keyboardPwdType: number,
+                startDate: number,
+                endDate: number,
+                sendDate: number,
+                isCustom: number,
+                senderUsername: string
+            }[];
+            pageNo: number;
+            pageSize: number;
+            pages: number;
+            total: number;
         }
     };
     Delete: {
