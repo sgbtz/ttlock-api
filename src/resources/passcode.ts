@@ -2,15 +2,21 @@ import Client from "../client"
 import type { PasscodeType } from '../types'
 
 type GetType = PasscodeType['Get']
+type ListType = PasscodeType['List']
 type DeleteType = PasscodeType['Delete']
 type ChangeType = PasscodeType['Change']
 type AddType = PasscodeType['Add']
 
 export default (client: Client) => ({
     get: (parameters: GetType['Parameters']): Promise<GetType['Response']> => {
-        const endpoint = '/v3/lock/listKeyboardPwd'
+        const endpoint = '/v3/keyboardPwd/get'
     
         return client.request<GetType['Response']>(endpoint, parameters)
+    },
+    list: (parameters: ListType['Parameters']): Promise<ListType['Response']> => {
+        const endpoint = '/v3/lock/listKeyboardPwd'
+    
+        return client.request<ListType['Response']>(endpoint, parameters)
     },
     delete: (parameters: DeleteType['Parameters']): Promise<DeleteType['Response']> => {
         const endpoint = '/v3/keyboardPwd/delete'
