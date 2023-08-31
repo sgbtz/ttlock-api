@@ -212,7 +212,7 @@ export interface LockType {
                 keyboardPwd: string;
                 keyboardPwdName: string;
                 keyboardPwdVersion: number;
-                keyboardPwdType: number;
+                keyboardPwdType: PwdType;
                 startDate: number;
                 endDate: number;
                 sendDate: number;
@@ -536,6 +536,21 @@ export interface PasscodeType {
         Parameters: {
             accessToken: string;
             lockId: number;
+            keyboardPwdType: PwdType;
+            keyboardPwdName?: number;
+            startDate: number;
+            endDate?: number;
+            date: number;
+        };
+        Response: {
+            keyboardPwd: string,
+            keyboardPwdId: number
+        }
+    };
+    List: {
+        Parameters: {
+            accessToken: string;
+            lockId: number;
             pageNo: number;
             pageSize: number;
             date: number;
@@ -546,7 +561,7 @@ export interface PasscodeType {
                 lockId: number,
                 keyboardPwd: string,
                 keyboardPwdName: string,
-                keyboardPwdType: number,
+                keyboardPwdType: PwdType,
                 startDate: number,
                 endDate: number,
                 sendDate: number,
@@ -942,4 +957,21 @@ export interface UnlockRecordsType {
             description: string;
         }
     }
+}
+
+export enum PwdType {
+    OneTime = 1,
+    Permanent,
+    Period,
+    Delete,
+    WeekendCyclic,
+    DailyCyclic,
+    WorkdayCyclic,
+    MondayCyclic,
+    TuesdayCyclic,
+    WednesdayCyclic,
+    ThursdayCyclic,
+    FridayCyclic,
+    SaturdayCyclic,
+    SundayCyclic
 }
