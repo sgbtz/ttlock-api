@@ -9,7 +9,7 @@ export default class Client {
         this.data = data
     }
 
-    async request<T = unknown>(endpoint: string, parameters: any, isOauth = false): Promise<T> {
+    async request<T = unknown>(endpoint: string, parameters: any, isOauth = true): Promise<T> {
         const { clientId } = this.data!
 
         const body = parameters
