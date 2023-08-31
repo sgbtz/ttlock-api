@@ -1,6 +1,6 @@
 {
-  "name": "@knagyorg/ttlock-api",
-  "version": "0.0.18",
+  "name": "@sgbtz/ttlock-api",
+  "version": "0.0.19",
   "description": "TTLock API",
   "scripts": {
     "build": "tsc",
@@ -25,10 +25,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/knagyorg/ttlock-api.git"
+    "url": "git+https://github.com/sgbtz/ttlock-api.git"
   },
   "bugs": {
-    "url": "https://github.com/knagyorg/ttlock-api/issues"
+    "url": "https://github.com/sgbtz/ttlock-api/issues"
   },
-  "homepage": "https://github.com/knagyorg/ttlock-api#readme"
+  "homepage": "https://github.com/sgbtz/ttlock-api#readme"
 }
